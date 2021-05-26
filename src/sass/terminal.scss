@@ -1,0 +1,34 @@
+.terminal-menu {
+	position: fixed;
+	bottom: 2rem;
+	left: 2rem;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	color: $green_text;
+	border: 1px solid $green_text;
+	padding: .5rem .85rem;
+	border-radius: 100px;
+	background: rgb(20, 19, 19);
+	z-index: 2;
+
+	p {
+		margin: 0 5px;
+		cursor: pointer;
+		font-size: .75rem;
+	}
+
+	.terminal-menu-button{
+		display: none;
+	}
+	
+}
+
+.wb-title{
+  background: #000;
+  color: $green_text;
+}
+
+.wb-title{
+  color: $green_text;
+}
