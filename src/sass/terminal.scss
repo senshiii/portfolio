@@ -1,7 +1,7 @@
 .terminal-menu {
 	position: fixed;
 	bottom: 2rem;
-	left: 2rem;
+	left: 4rem;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -24,11 +24,29 @@
 	
 }
 
-.wb-title{
-  background: #000;
-  color: $green_text;
-}
+.terminal-wrapper{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(black, .5);
+	z-index: 20;
 
-.wb-title{
-  color: $green_text;
+	.terminal-backdrop{
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.terminal-base{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 65%;
+		height: 65%;
+	}
+
 }

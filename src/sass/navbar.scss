@@ -9,17 +9,16 @@
 	width: 100vw;
 	height: 10vh;
 	padding: 2px 0;
-	background: transparent;
-	transition: all .3s ease-in-out;
 	padding: 0 2rem;
+	background: transparent;
 
 	&.navbar-scrolled {
-		border-bottom: 1px solid rgba(#fff, .45);
+		border-bottom: 1px solid rgba($dark_green, .45);
 		background: rgb(26, 25, 25);
 		height: 7.5vh;
 		.nav-link {
 			a {
-				font-size: .75rem;
+				font-size: .85rem;
 			}
 		}
 		.nav-brand {
@@ -38,16 +37,16 @@
 	.nav-link {
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		align-items: flex-start;
 		flex-direction: column;
 		margin: 0 2rem;
 		cursor: pointer;
 
 		a {
-			color: $green_text;
-			font-size: .9rem;
+			color: #fff;
+			font-size: 1rem;
 		}
-
+		
 		.nav-border {
 			margin-top: 5px;
 			width: 10px;
@@ -56,9 +55,9 @@
 			border-radius: 10px;
 			transition: all .3s ease-in-out;
 		}
-
+		
 		&:hover > a {
-			color: #fff;
+			color: $green_text;
 			font-weight: bold;
 		}
 
