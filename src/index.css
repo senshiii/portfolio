@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 :root {
   --laptop-content: "\a     _________________\a    |                 |\a    |                 |\a    |                 |\a    |                 |\a    |                 |\a    |                 |\a    |                 |\a    /.-.-.-.-.-.-.-.-.\\\a   /.-.-.-.-.-.-.-.-.-.\\\a  /.-.-.-.-.-.-.-.-.-.-.\\\a/______/__________\\_____\\ \a\\_______________________/";
   --lap-width: 404px;
@@ -128,6 +129,11 @@
   background: #141313;
   z-index: 2;
 }
+@media (max-width: 800px) {
+  .terminal-menu {
+    display: none;
+  }
+}
 .terminal-menu p {
   margin: 0 5px;
   cursor: pointer;
@@ -175,6 +181,46 @@
   padding: 0 2rem;
   background: transparent;
 }
+.navbar .nav-menu-trigger {
+  color: #fff;
+  margin-right: 10px;
+  display: none;
+}
+@media (max-width: 500px) {
+  .navbar .nav-menu-trigger {
+    display: inline-block;
+  }
+}
+.navbar .nav-mobile-wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.95);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: left 0.5s ease-in;
+}
+.navbar .nav-mobile-wrapper.show {
+  left: 0;
+}
+.navbar .nav-mobile-wrapper * {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0.85rem 0;
+}
+.navbar .nav-mobile-wrapper *:last-child {
+  font-size: 1.65rem;
+}
+@media (max-width: 500px) {
+  .navbar .nav-mobile-wrapper {
+    display: flex;
+  }
+}
 .navbar.navbar-scrolled {
   border-bottom: 1px solid rgba(28, 131, 17, 0.45);
   background: #1a1919;
@@ -187,11 +233,23 @@
   display: inline;
   margin-right: auto;
 }
+@media (max-width: 768px) {
+  .navbar.navbar-scrolled {
+    height: 10vh;
+  }
+}
 .navbar .nav-brand {
   color: #fff;
   justify-self: self-start;
   display: none;
   margin-right: 0;
+}
+@media (max-width: 500px) {
+  .navbar .nav-brand {
+    margin-left: auto;
+    display: inline;
+    margin-right: auto;
+  }
 }
 .navbar .nav-link {
   display: flex;
@@ -219,6 +277,19 @@
 }
 .navbar .nav-link:hover > .nav-border {
   width: 100%;
+}
+@media (max-width: 800px) {
+  .navbar .nav-link {
+    margin: 0 1rem;
+  }
+  .navbar .nav-link a {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 500px) {
+  .navbar .nav-link {
+    display: none;
+  }
 }
 
 * {
@@ -296,6 +367,16 @@ a {
   object-fit: cover;
   transform: translateY(25px) scaleX(-1) scale(1.3);
 }
+@media (max-width: 768px) {
+  .home_banner .headshot {
+    width: 160px;
+    height: 160px;
+    border-width: 2px;
+  }
+  .home_banner .headshot img {
+    transform: translateY(20px) scaleX(-1) scale(1.3) !important;
+  }
+}
 .home_banner > div {
   width: 100%;
 }
@@ -303,6 +384,7 @@ a {
   font-size: 1.85rem;
   width: 75%;
   display: inline;
+  margin-bottom: 1rem;
 }
 .home_banner .icons {
   width: auto;
@@ -344,6 +426,31 @@ a {
   }
   100% {
     transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .home_banner h1 {
+    font-size: 1.2rem !important;
+  }
+  .home_banner .name span {
+    display: inline-block;
+    margin-top: 10px;
+  }
+  .home_banner .icons {
+    margin-top: 1rem;
+    width: 75%;
+    right: 0;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .home_banner .icons a {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 400px) {
+  .home_banner h1 {
+    font-size: 1rem !important;
   }
 }
 
@@ -507,6 +614,13 @@ a {
   width: 100%;
   display: none;
 }
+.work .work-mobile h2 {
+  color: white;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: "Poppins";
+  font-weight: 100;
+}
 .work .work-mobile .works-wrapper {
   width: 100%;
 }
@@ -538,7 +652,8 @@ a {
   .work .work-mobile .work-folder .folder-body .work-info h1 {
     font-size: 1.3rem;
   }
-  .work .work-mobile .work-folder .folder-body .work-info p, .work .work-mobile .work-folder .folder-body .work-info li {
+  .work .work-mobile .work-folder .folder-body .work-info p,
+.work .work-mobile .work-folder .folder-body .work-info li {
     font-size: 0.85rem;
   }
   .work .work-mobile .work-folder .folder-body .work-info .tech-wrapper {
@@ -582,6 +697,9 @@ a {
   margin: 1rem 0;
   margin-bottom: 2rem;
 }
+.projects .project-wrapper .mobile-pic {
+  display: none;
+}
 @media (max-width: 500px) {
   .projects .project-wrapper {
     width: 95%;
@@ -592,6 +710,7 @@ a {
     display: none;
   }
   .projects .project-wrapper .demo .mobile-pic {
+    display: block;
     width: 100%;
     height: auto;
     box-shadow: 0 0 16px -4px red;

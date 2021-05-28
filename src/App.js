@@ -1,10 +1,10 @@
-import { Fragment, useEffect, useRef } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import TypeIt from 'typeit-react';
 import ReactTooltip from 'react-tooltip';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { SiLeetcode, SiCodechef } from 'react-icons/si';
 
 import Navbar from './components/Layout/Navbar';
-
 
 import DP from './assets/images/pic.jpg';
 import Terminal from './components/Terminal/Terminal';
@@ -13,7 +13,7 @@ import Project from './components/landing/Project';
 
 const App = () => {
 	const scrollRef = useRef();
-	
+	const [ cursor, setCursor ] = useState(true);
 
 	useEffect(() => {
 		document.body.addEventListener('scroll', () => {
@@ -39,13 +39,22 @@ const App = () => {
 				<div className="headshot">
 					<img src={DP} alt="Sayan Das" />
 				</div>
-				<h1>
-					Hello World ! I am <span className="green-text">Sayan Das</span>{' '}
+				<h1 className="name">
+					Hello World ! I am <span className="green-text">Sayan Das</span>
 				</h1>
-				<br />
 				<TypeIt
 					element={'h1'}
-					options={{ speed: 85, delay: 850, strings: 'I am a ' }}
+					options={{
+						speed: 85,
+						delay: 850,
+						strings: 'I am a ',
+						cursor,
+						afterComplete: (step, instance) => {
+							if (instance.is('completed')) {
+								instance.destroy();
+							}
+						}
+					}}
 					style={{ width: '75%' }}
 					getBeforeInit={(instance) => {
 						instance
@@ -74,8 +83,11 @@ const App = () => {
 					<a target="_blank" rel="noreferrer" href="https://sayand031999.medium.com/">
 						<FontAwesomeIcon icon={[ 'fab', 'medium' ]} />
 					</a>
-					<a target="_blank" rel="noreferrer" href="https://www.google.com">
-						<FontAwesomeIcon icon={[ 'fab', 'instagram' ]} />
+					<a target="_blank" rel="noreferrer" href="https://leetcode.com/sayand031999/">
+						<SiLeetcode />
+					</a>
+					<a target="_blank" rel="noreferrer" href="https://www.codechef.com/users/sayan_das">
+						<SiCodechef />
 					</a>
 				</div>
 
@@ -89,10 +101,9 @@ const App = () => {
 				</a>
 			</section>
 
-      <Work />
-			
-      <Project />
-			
+			<Work />
+
+			<Project />
 		</Fragment>
 	);
 };

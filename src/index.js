@@ -19,11 +19,12 @@ import {
   faExpand,
   faCompress,
   faExternalLinkAlt,
+  faHamburger,
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./index.css";
 import App from "./App";
-import { faClock } from "@fortawesome/free-regular-svg-icons";
+import { faClock, faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 
 // Adding FA icons to library
 library.add(
@@ -42,7 +43,9 @@ library.add(
   faExpand,
   faCompress,
   faExternalLinkAlt,
-  faYoutube
+  faYoutube,
+  faHamburger,
+  faTimesCircle
 );
 
 ReactDOM.render(

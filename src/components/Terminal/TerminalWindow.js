@@ -86,6 +86,7 @@ const TerminalWindow = ({ toggleTerminal }) => {
 				} else if (!lsList.includes(args[1])) {
 					print(`Section ${args[1]} could not be found.\n\nType cd --help to know more`);
 				} else {
+					window.location.href = window.location.href + `#${args[1].substring(1)}`;
 				}
 			}
 		},
