@@ -7,8 +7,6 @@ const Navbar = () => {
 
 	useEffect(() => {
 		document.body.addEventListener('scroll', () => {
-			console.log('Body Scroll Top', document.body.scrollTop);
-			console.log('Client Height', navbarRef.current.clientHeight);
 			if (document.body.scrollTop > navbarRef.current.clientHeight) {
 				navbarRef.current.classList.add('navbar-scrolled');
 			} else {

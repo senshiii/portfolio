@@ -6,6 +6,7 @@ import {
   faLinkedin,
   faMedium,
   faInstagram,
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faTerminal,
@@ -15,6 +16,9 @@ import {
 	faFolder,
 	faLaptopCode,
 	faCalendar,
+  faExpand,
+  faCompress,
+  faExternalLinkAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./index.css";
@@ -34,7 +38,11 @@ library.add(
 	faFolder,
 	faClock,
 	faLaptopCode,
-	faCalendar
+	faCalendar,
+  faExpand,
+  faCompress,
+  faExternalLinkAlt,
+  faYoutube
 );
 
 ReactDOM.render(

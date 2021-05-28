@@ -1,7 +1,7 @@
 .terminal-menu {
 	position: fixed;
 	bottom: 2rem;
-	left: 4rem;
+	left: 2rem;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -30,7 +30,7 @@
 	top: 0;
 	width: 100vw;
 	height: 100vh;
-	background: rgba(black, .5);
+	background: rgba(black, .85);
 	z-index: 20;
 
 	.terminal-backdrop{

@@ -1,9 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ReactTooltip from 'react-tooltip';
 
 const TerminalMenu = ({ toggleTerminal }) => {
 	return (
 		<div className="terminal-menu">
-			<p onClick={toggleTerminal} title="Termianl Menu" id="terminal-toggle" className="terminal-toggle">
+			<ReactTooltip effect="solid" place="right" />
+			<p
+				data-tip="Open Terminal"
+				onClick={toggleTerminal}
+				id="terminal-toggle"
+				className="terminal-toggle"
+			>
 				<FontAwesomeIcon icon="terminal" />
 			</p>
 		</div>
